@@ -7,13 +7,21 @@
 Here are some screenshots of the app:
 
 <p align="center">
-  <img src="https://image.ibb.co/hkoTG5/Simulator_Screen_Shot_Sep_16_2017_11_03_34_PM.png" width="350"/>
+  <table class="image">
+  <caption align="bottom">Keep track of your projects!</caption>
+  <tr><td><img src="https://image.ibb.co/hkoTG5/Simulator_Screen_Shot_Sep_16_2017_11_03_34_PM.png" width="350"/></td></tr>
+  </table>
+  
+  
+  
   <img src="https://image.ibb.co/h3xupQ/Simulator_Screen_Shot_Sep_16_2017_11_04_14_PM.png" width="350"/>
   <img src="https://image.ibb.co/ddzkw5/Simulator_Screen_Shot_Sep_16_2017_11_05_46_PM.png" width="350"/>
+  <img src="https://image.ibb.co/bAR13k/Simulator_Screen_Shot_Sep_16_2017_11_12_36_PM.png" width="350"/>
+  
 </p>
 
 ![]()
-Keep track of your projects!
+
 
 ![]()
 See which task is your current task!
