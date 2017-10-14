@@ -5,6 +5,10 @@
 - Created using Swift with Core Data integrated.
 
 Here are some screenshots of the app:
-[![Keep track of your projects!](https://ibb.co/khHc9Q)]
-[![See which task is your current task!](https://ibb.co/jNqEpQ)]
-[![Get reminded when your task overdues!](https://ibb.co/byfEpQ)]
+
+<p align="center">
+  <img src="https://image.ibb.co/hkoTG5/Simulator_Screen_Shot_Sep_16_2017_11_03_34_PM.png" width="350"/>
+  <img src="https://image.ibb.co/h3xupQ/Simulator_Screen_Shot_Sep_16_2017_11_04_14_PM.png" width="350"/>
+  <img src="https://image.ibb.co/ddzkw5/Simulator_Screen_Shot_Sep_16_2017_11_05_46_PM.png" width="350"/>
+  <img src="https://image.ibb.co/bAR13k/Simulator_Screen_Shot_Sep_16_2017_11_12_36_PM.png" width="350"/>  
+</p>
