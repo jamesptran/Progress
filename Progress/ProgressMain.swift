@@ -13,12 +13,18 @@ import CoreData
 class ProgressMain: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     var projectList : [Project] = []
+    let defaults:UserDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Show displayingProject
-        // TODO: Use NSUserDefault to set the displayingProject        
+        // TODO: Use NSUserDefault to set the displayingProject
+        
+        let noTutorial:Bool = defaults.bool(forKey: "DontShowTutorial" )
+        if !noTutorial {
+            self.performSegue(withIdentifier: "MainToTutorialSegue", sender: nil)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -124,9 +130,14 @@ class MainProgressCell : UITableViewCell {
             
             self.projectLabel.text = project.name
             self.progressBar.progress = Float(project.percent())
-            self.shouldCompleteProgressBar.progress = Float(shouldCompletePts) / Float(totalPts)
             
-            if shouldCompletePts < completedPts {
+            if totalPts == 0 {
+                self.shouldCompleteProgressBar.progress = 1
+            } else {
+                self.shouldCompleteProgressBar.progress = Float(shouldCompletePts) / Float(totalPts)
+            }
+            
+            if shouldCompletePts <= completedPts {
                 shouldCompleteProgressBar.tintColor = .green
             }
             if shouldCompletePts > completedPts {
@@ -134,9 +145,6 @@ class MainProgressCell : UITableViewCell {
                 if shouldCompletePts == totalPts {
                     shouldCompleteProgressBar.tintColor = .red
                 }
-            }
-            if shouldCompletePts == completedPts {
-                shouldCompleteProgressBar.tintColor = .green
             }
             
         }

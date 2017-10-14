@@ -61,7 +61,7 @@
 		75A6C9121F45D08A00E58647 /* Proxima Nova Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 75A6C8E81F45D08A00E58647 /* Proxima Nova Semibold.otf */; };
 		75A6C9131F45D08A00E58647 /* Proxima Nova Thin Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 75A6C8E91F45D08A00E58647 /* Proxima Nova Thin Italic.otf */; };
 		75A6C9141F45D08A00E58647 /* Proxima Nova Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 75A6C8EA1F45D08A00E58647 /* Proxima Nova Thin.otf */; };
-		75AC871D1F65EDF5001DFB3B /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AC871C1F65EDF5001DFB3B /* CoreData.swift */; };
+		75C7DA1D1F7C922A00B34810 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C7DA1C1F7C922A00B34810 /* TutorialPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,7 +142,7 @@
 		75A6C8E81F45D08A00E58647 /* Proxima Nova Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Semibold.otf"; sourceTree = "<group>"; };
 		75A6C8E91F45D08A00E58647 /* Proxima Nova Thin Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Thin Italic.otf"; sourceTree = "<group>"; };
 		75A6C8EA1F45D08A00E58647 /* Proxima Nova Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Thin.otf"; sourceTree = "<group>"; };
-		75AC871C1F65EDF5001DFB3B /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		75C7DA1C1F7C922A00B34810 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,13 +194,13 @@
 			isa = PBXGroup;
 			children = (
 				75A6C88F1F45CEA700E58647 /* AppDelegate.swift */,
-				75AC871C1F65EDF5001DFB3B /* CoreData.swift */,
 				758973F41F5BA3C9005EDE3B /* DataDefinition.swift */,
 				75A6C8911F45CEA700E58647 /* ProgressMain.swift */,
 				758973EE1F5B9BE0005EDE3B /* NewProject.swift */,
 				758973F01F5B9BE7005EDE3B /* NewTask.swift */,
 				758973F21F5B9BEF005EDE3B /* ProjectDetail.swift */,
 				75A6C8931F45CEA700E58647 /* Main.storyboard */,
+				75C7DA1C1F7C922A00B34810 /* TutorialPageViewController.swift */,
 				75A6C8991F45CEA700E58647 /* Assets.xcassets */,
 				75A6C8C01F45D07B00E58647 /* Font */,
 				75A6C89B1F45CEA700E58647 /* LaunchScreen.storyboard */,
@@ -460,7 +460,7 @@
 				75A6C8981F45CEA700E58647 /* Progress.xcdatamodeld in Sources */,
 				758973F51F5BA3C9005EDE3B /* DataDefinition.swift in Sources */,
 				758973F31F5B9BEF005EDE3B /* ProjectDetail.swift in Sources */,
-				75AC871D1F65EDF5001DFB3B /* CoreData.swift in Sources */,
+				75C7DA1D1F7C922A00B34810 /* TutorialPageViewController.swift in Sources */,
 				758973F11F5B9BE7005EDE3B /* NewTask.swift in Sources */,
 				75A6C8921F45CEA700E58647 /* ProgressMain.swift in Sources */,
 				75A6C8901F45CEA700E58647 /* AppDelegate.swift in Sources */,

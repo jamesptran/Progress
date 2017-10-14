@@ -81,7 +81,6 @@ class NewProjectViewController : UIViewController, UITableViewDelegate, UITableV
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
-        debugPrintCoreData()
         
         let managedContext = appDelegate.persistentContainer.viewContext
         let projectEntity = NSEntityDescription.entity(forEntityName: "Project", in: managedContext)!
@@ -99,7 +98,6 @@ class NewProjectViewController : UIViewController, UITableViewDelegate, UITableV
             project.addToHaveTasks(task)
             print("add to project finished")
         }
-        debugPrintCoreData()
         
         self.navigationController?.popViewController(animated: true)
     }
@@ -130,23 +128,22 @@ class NewProjectTaskCell : UITableViewCell {
         didSet {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MM/dd/YYYY"
-            
+            let today = dateFormatter.date(from: dateFormatter.string(from: Date(timeIntervalSinceNow: 0)))!
             self.taskNameLabel.text = task?.name ?? "N/A"
             
             let startDate = (task?.startDate as Date?) ?? Date(timeIntervalSince1970: 0)
             let timeIntervalFromDays = TimeInterval( Int((task?.daysLast) ?? 0) * 24 * 3600)
             let endDate = Date(timeInterval: timeIntervalFromDays, since: startDate)
-            let now = Date(timeIntervalSinceNow: 0)
             
             var daysLeft : Int = Int(round(endDate.timeIntervalSinceNow / 3600 / 24))
             var percentCompleted : Double = 1.0 - Double(daysLeft) / (timeIntervalFromDays / 3600 / 24)
             
-            if startDate > now {
+            if startDate > today {
                 daysLeft = Int((task?.daysLast)!)
                 percentCompleted = 0
             }
             
-            if endDate < now {
+            if endDate < today {
                 daysLeft = 0
                 percentCompleted = 1.0
             }

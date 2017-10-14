@@ -16,32 +16,38 @@ class ProjectDetailViewController : UIViewController, UITableViewDelegate, UITab
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var projectLabel: UILabel!
-    @IBOutlet weak var startDateLabel: UILabel!
-    @IBOutlet weak var endDateLabel: UILabel!
     @IBOutlet weak var percentLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var shouldCompletePercentLabel: UILabel!
     @IBOutlet weak var shouldCompleteProgressBar: UIProgressView!
     @IBOutlet weak var alertLabel: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateProgressBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateProgressBar()
+    }
+    
+    func updateProgressBar() {
         self.taskList = (project?.haveTasks?.allObjects as? [Task]) ?? []
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM dd, yyyy"
-        
+        let today = dateFormatter.date(from: dateFormatter.string(from: Date(timeIntervalSinceNow: 0)))
+
         if let unwrapped = project {
             self.projectLabel.text = unwrapped.name
-            startDateLabel.text = "Start date: " + dateFormatter.string(from: unwrapped.startDate())
-            endDateLabel.text = "End date: " + dateFormatter.string(from: unwrapped.endDate())
-            
-            
             var shouldCompletePts : Int = 0
             var totalPts : Int = 0
             var completedPts : Int = 0
             for task in unwrapped.haveTasks?.allObjects as! [Task] {
                 totalPts += Int(task.impPts)
-                if task.endDate() < Date(timeIntervalSinceNow: 0) {
+                
+                if task.endDate() < today! {
                     shouldCompletePts += Int(task.impPts)
                 }
                 if task.isCompleted {
@@ -78,11 +84,14 @@ class ProjectDetailViewController : UIViewController, UITableViewDelegate, UITab
             shouldCompleteProgressBar.progress = Float(shouldCompletePts) / Float(totalPts)
             let shouldCompletePercent : Float = Float(shouldCompletePts) / Float(totalPts) * 100
             shouldCompletePercentLabel.text = String(format: "%.0f%% (\(shouldCompletePts)pts/\(totalPts)pts)", shouldCompletePercent)
+            
+            if totalPts == 0 {
+                shouldCompleteProgressBar.progress = 1
+                shouldCompleteProgressBar.tintColor = .green
+                shouldCompletePercentLabel.text = String(format: "%.0f%% (\(shouldCompletePts)pts/\(totalPts)pts)", 100.0)
+                alertLabel.text = "There is no task in this project yet."
+            }
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -129,11 +138,11 @@ class ProjectDetailViewController : UIViewController, UITableViewDelegate, UITab
         complete.backgroundColor = .green
         
         if self.taskList[indexPath.row].isCompleted {
-            complete.backgroundColor = .red
+            complete.backgroundColor = .orange
             complete.title = "Uncomplete"
         }
         
-        return [delete, complete]
+        return [complete, delete]
     }
     
     func addToProject(_ task: Task) {

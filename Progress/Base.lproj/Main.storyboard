@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gxb-Xm-QA9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gxb-Xm-QA9">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,12 +24,241 @@
     </customFonts>
     <scenes>
         <!--Navigation Controller-->
+        <scene sceneID="Y6p-t2-eaE">
+            <objects>
+                <navigationController id="pKp-4y-1lL" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IIi-Tb-yPA">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="ProximaNovaExCn-Regular" family="Proxima Nova Extra Condensed" pointSize="20"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="USp-Qg-L87" kind="relationship" relationship="rootViewController" id="AnF-je-wac"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qXW-rs-znF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-855" y="-663"/>
+        </scene>
+        <!--Tutorial Page View Controller-->
+        <scene sceneID="MHY-f8-3Da">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="mid" doubleSided="YES" id="USp-Qg-L87" customClass="TutorialPageViewController" customModule="Progress" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="PaC-qg-kOv">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="mlY-DS-Akn">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="USp-Qg-L87" id="0wd-2c-iIP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kCP-IO-a57" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="161" y="-662"/>
+        </scene>
+        <!--Page 1 Tutorial-->
+        <scene sceneID="Bdv-5R-AlR">
+            <objects>
+                <viewController storyboardIdentifier="Page1ViewController" id="waw-0y-Ty3" userLabel="Page 1 Tutorial" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rih-HL-YRA"/>
+                        <viewControllerLayoutGuide type="bottom" id="JMj-Kg-hyP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NTn-mW-Ukk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page1_added" translatesAutoresizingMaskIntoConstraints="NO" id="CrA-Ch-A36">
+                                <rect key="frame" x="0.0" y="110" width="320" height="186"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="CrA-Ch-A36" secondAttribute="height" multiplier="160:93" id="0c4-i3-T38"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75q-Be-jyC">
+                                <rect key="frame" x="14" y="296" width="292" height="235"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Get started by creating some projects and add some tasks to Progress. 
+
+In the main screen, when you have created your projects, they will be displayed with two progress bars.
+- The top progress bar displays your current progress 
+- The bottom progress bar displays the planned progression.
+</string>
+                                <fontDescription key="fontDescription" name="ProximaNovaCond-Regular" family="Proxima Nova Condensed" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Progress!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMl-YU-MtR">
+                                <rect key="frame" x="33" y="69.5" width="255" height="30.5"/>
+                                <fontDescription key="fontDescription" name="ProximaNovaCond-Semibold" family="Proxima Nova Condensed" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="75q-Be-jyC" firstAttribute="leading" secondItem="NTn-mW-Ukk" secondAttribute="leading" constant="14" id="0A0-uz-kJx"/>
+                            <constraint firstItem="JMj-Kg-hyP" firstAttribute="top" secondItem="75q-Be-jyC" secondAttribute="bottom" constant="37" id="90b-e1-fDW"/>
+                            <constraint firstAttribute="trailing" secondItem="CrA-Ch-A36" secondAttribute="trailing" id="DG4-jl-Hr1"/>
+                            <constraint firstItem="qMl-YU-MtR" firstAttribute="centerX" secondItem="NTn-mW-Ukk" secondAttribute="centerX" id="U0n-Zo-Doj"/>
+                            <constraint firstItem="75q-Be-jyC" firstAttribute="top" secondItem="CrA-Ch-A36" secondAttribute="bottom" id="jeY-AV-HgQ"/>
+                            <constraint firstItem="CrA-Ch-A36" firstAttribute="top" secondItem="NTn-mW-Ukk" secondAttribute="top" constant="110" id="kh4-z1-tRa"/>
+                            <constraint firstItem="CrA-Ch-A36" firstAttribute="top" secondItem="qMl-YU-MtR" secondAttribute="bottom" constant="10" id="rww-xz-el6"/>
+                            <constraint firstAttribute="trailing" secondItem="75q-Be-jyC" secondAttribute="trailing" constant="14" id="sok-9r-H7j"/>
+                            <constraint firstItem="CrA-Ch-A36" firstAttribute="leading" secondItem="NTn-mW-Ukk" secondAttribute="leading" id="svx-6f-tUa"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KUA-va-J2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1175.625" y="-663.38028169014081"/>
+        </scene>
+        <!--Page 2 Tutorial-->
+        <scene sceneID="NzS-fu-U1r">
+            <objects>
+                <viewController storyboardIdentifier="Page2ViewController" id="jZq-9N-bZ1" userLabel="Page 2 Tutorial" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O9f-e8-YfJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="ODF-ms-yOl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bfZ-Mx-nih">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page2_added" translatesAutoresizingMaskIntoConstraints="NO" id="GFF-Nq-Peb">
+                                <rect key="frame" x="0.0" y="64" width="320" height="188"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GFF-Nq-Peb" secondAttribute="height" multiplier="80:47" id="vfg-ip-7qQ"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APT-rM-3Re">
+                                <rect key="frame" x="14" y="260" width="292" height="271"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">If the top line progresses slower than the below line, you need to catch up! 
+
+If the top line progresses faster, you are working faster than the planned task ending date.</string>
+                                <fontDescription key="fontDescription" name="ProximaNovaCond-Regular" family="Proxima Nova Condensed" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="APT-rM-3Re" firstAttribute="top" secondItem="GFF-Nq-Peb" secondAttribute="bottom" constant="8" id="M8Y-yW-W3Q"/>
+                            <constraint firstItem="GFF-Nq-Peb" firstAttribute="leading" secondItem="bfZ-Mx-nih" secondAttribute="leading" id="Uns-hV-H5k"/>
+                            <constraint firstAttribute="bottom" secondItem="APT-rM-3Re" secondAttribute="bottom" constant="37" id="YeQ-f1-vQf"/>
+                            <constraint firstItem="GFF-Nq-Peb" firstAttribute="top" secondItem="bfZ-Mx-nih" secondAttribute="top" constant="64" id="ZuE-Wf-Ej2"/>
+                            <constraint firstItem="APT-rM-3Re" firstAttribute="leading" secondItem="bfZ-Mx-nih" secondAttribute="leading" constant="14" id="pGo-kV-TJw"/>
+                            <constraint firstAttribute="trailing" secondItem="GFF-Nq-Peb" secondAttribute="trailing" id="tjM-ZM-Hop"/>
+                            <constraint firstAttribute="trailing" secondItem="APT-rM-3Re" secondAttribute="trailing" constant="14" id="whs-bf-eJw"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="08U-EN-ISm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2137.5" y="-663.38028169014081"/>
+        </scene>
+        <!--Page 3 Tutorial-->
+        <scene sceneID="cvV-h8-yKo">
+            <objects>
+                <viewController storyboardIdentifier="Page3ViewController" id="7C8-n5-gXw" userLabel="Page 3 Tutorial" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KAf-Va-Onb"/>
+                        <viewControllerLayoutGuide type="bottom" id="qhb-oI-3Ko"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g3W-p7-63N">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page3_added" translatesAutoresizingMaskIntoConstraints="NO" id="deZ-Ag-csi">
+                                <rect key="frame" x="0.0" y="64" width="320" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="deZ-Ag-csi" secondAttribute="height" multiplier="8:3" id="hKQ-tq-pLn"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ak-N9-6mV">
+                                <rect key="frame" x="14" y="192" width="292" height="339"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Tasks in Progress will be kept track based on the starting date and how long it takes to finish the task.
+
+Progress calculates how finished your projects are based on its finished tasks total importance points. Points are assigned on a scale of 1-10 for each task.</string>
+                                <fontDescription key="fontDescription" name="ProximaNovaCond-Regular" family="Proxima Nova Condensed" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="deZ-Ag-csi" firstAttribute="top" secondItem="g3W-p7-63N" secondAttribute="top" constant="64" id="2ne-aj-nab"/>
+                            <constraint firstItem="3Ak-N9-6mV" firstAttribute="top" secondItem="deZ-Ag-csi" secondAttribute="bottom" constant="8" id="CA7-yM-lMb"/>
+                            <constraint firstAttribute="trailing" secondItem="deZ-Ag-csi" secondAttribute="trailing" id="DVd-aW-ZaL"/>
+                            <constraint firstAttribute="trailing" secondItem="3Ak-N9-6mV" secondAttribute="trailing" constant="14" id="Fjc-ag-me4"/>
+                            <constraint firstItem="3Ak-N9-6mV" firstAttribute="leading" secondItem="g3W-p7-63N" secondAttribute="leading" constant="14" id="VMG-Qs-8yt"/>
+                            <constraint firstItem="deZ-Ag-csi" firstAttribute="leading" secondItem="g3W-p7-63N" secondAttribute="leading" id="j7y-fe-9vC"/>
+                            <constraint firstItem="qhb-oI-3Ko" firstAttribute="top" secondItem="3Ak-N9-6mV" secondAttribute="bottom" constant="37" id="ll0-yr-LBa"/>
+                            <constraint firstItem="3Ak-N9-6mV" firstAttribute="top" secondItem="deZ-Ag-csi" secondAttribute="bottom" constant="8" id="wIV-HQ-J4C"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pwb-ad-UP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3048.75" y="-663.38028169014081"/>
+        </scene>
+        <!--Page 4 Tutorial-->
+        <scene sceneID="qnP-5y-HqB">
+            <objects>
+                <viewController storyboardIdentifier="Page4ViewController" id="djn-jP-FTa" userLabel="Page 4 Tutorial" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rq4-Fe-lXd"/>
+                        <viewControllerLayoutGuide type="bottom" id="o3K-v3-Vu7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rFr-gZ-lae">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page4_added" translatesAutoresizingMaskIntoConstraints="NO" id="JNm-pS-DiP">
+                                <rect key="frame" x="0.0" y="84" width="320" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JNm-pS-DiP" secondAttribute="height" multiplier="160:160" id="OEN-46-c8M"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYS-fG-0b6">
+                                <rect key="frame" x="14" y="360" width="292" height="171"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Clicking on a project shows its tasks and info. There are statuses for each task which tells you which task you should focus on finishing. 
+
+There are four statuses: Overdue, Finished, Ongoing and Pending.</string>
+                                <fontDescription key="fontDescription" name="ProximaNovaCond-Regular" family="Proxima Nova Condensed" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JNm-pS-DiP" firstAttribute="top" secondItem="rFr-gZ-lae" secondAttribute="top" constant="84" id="13V-SO-Z8g"/>
+                            <constraint firstAttribute="trailing" secondItem="kYS-fG-0b6" secondAttribute="trailing" constant="14" id="3X1-eN-mxh"/>
+                            <constraint firstItem="JNm-pS-DiP" firstAttribute="leading" secondItem="rFr-gZ-lae" secondAttribute="leading" id="5Ax-t8-W2Q"/>
+                            <constraint firstAttribute="trailing" secondItem="JNm-pS-DiP" secondAttribute="trailing" id="6CT-FO-8vT"/>
+                            <constraint firstItem="kYS-fG-0b6" firstAttribute="top" secondItem="JNm-pS-DiP" secondAttribute="bottom" constant="-44" id="KwO-8B-gvk"/>
+                            <constraint firstItem="kYS-fG-0b6" firstAttribute="leading" secondItem="rFr-gZ-lae" secondAttribute="leading" constant="14" id="cSD-N5-Aae"/>
+                            <constraint firstItem="o3K-v3-Vu7" firstAttribute="top" secondItem="kYS-fG-0b6" secondAttribute="bottom" constant="37" id="wyH-vv-cLE"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LzI-wj-iPv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3900" y="-663.38028169014081"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="UMc-Xp-4L6">
             <objects>
                 <navigationController id="gxb-Xm-QA9" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jeL-go-900">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="ProximaNovaExCn-Semibold" family="Proxima Nova Extra Condensed" pointSize="20"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="ProximaNovaExCn-Regular" family="Proxima Nova Extra Condensed" pointSize="22"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="BT5-i7-ZOf"/>
@@ -71,7 +301,7 @@
                                                     <rect key="frame" x="31" y="37.5" width="258" height="2.5"/>
                                                     <color key="trackTintColor" white="0.90489366319999998" alpha="1" colorSpace="calibratedWhite"/>
                                                 </progressView>
-                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NL6-Oy-LHK">
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.34000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="NL6-Oy-LHK">
                                                     <rect key="frame" x="31" y="54" width="258" height="2.5"/>
                                                     <color key="trackTintColor" white="0.90489366319999998" alpha="1" colorSpace="calibratedWhite"/>
                                                 </progressView>
@@ -82,6 +312,7 @@
                                                 <constraint firstItem="JCJ-B6-3ic" firstAttribute="leading" secondItem="i5D-vc-ND0" secondAttribute="leadingMargin" constant="24" id="XDY-uK-ctu"/>
                                                 <constraint firstItem="pc1-7Y-Nu4" firstAttribute="top" secondItem="JCJ-B6-3ic" secondAttribute="bottom" constant="8" id="d0k-Wh-LWq"/>
                                                 <constraint firstItem="NL6-Oy-LHK" firstAttribute="leading" secondItem="i5D-vc-ND0" secondAttribute="leadingMargin" constant="23" id="f2U-5d-dOx"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JCJ-B6-3ic" secondAttribute="trailingMargin" id="q0q-SA-oA7"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="NL6-Oy-LHK" secondAttribute="trailing" constant="23" id="qGL-eb-66w"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="pc1-7Y-Nu4" secondAttribute="trailing" constant="23" id="w3y-Kz-x0N"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="NL6-Oy-LHK" secondAttribute="bottom" constant="10" id="wNz-yM-EYy"/>
@@ -108,7 +339,8 @@
                             <constraint firstItem="w02-Zx-Gex" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="sCl-6y-aRq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Progress" id="Wba-pt-WlR">
+                    <navigationItem key="navigationItem" title="Progress" largeTitleDisplayMode="never" id="Wba-pt-WlR">
+                        <barButtonItem key="backBarButtonItem" title=" " id="eB4-gq-5dc"/>
                         <barButtonItem key="rightBarButtonItem" title="New" id="ChA-Rp-gGX">
                             <connections>
                                 <action selector="newProjectButtonTouched:" destination="BYZ-38-t0r" id="P4x-7U-2Fn"/>
@@ -119,6 +351,7 @@
                     <connections>
                         <outlet property="tableView" destination="w02-Zx-Gex" id="evz-cw-4oR"/>
                         <segue destination="P1w-Xx-ArW" kind="show" identifier="MainToProjectDetail" id="Oeg-U4-UGh"/>
+                        <segue destination="pKp-4y-1lL" kind="presentation" identifier="MainToTutorialSegue" id="4Pd-4P-TWK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -144,29 +377,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.73000001907348633" translatesAutoresizingMaskIntoConstraints="NO" id="iC4-b4-QHo">
-                                <rect key="frame" x="16" y="151" width="288" height="2.5"/>
+                                <rect key="frame" x="16" y="131" width="288" height="2.5"/>
                                 <color key="trackTintColor" white="0.90489366319999998" alpha="1" colorSpace="calibratedWhite"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finished: 73% (144pts/200pts)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcg-fN-s0J">
-                                <rect key="frame" x="86.5" y="140" width="148" height="12"/>
+                                <rect key="frame" x="86.5" y="120" width="148" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start date: 08/17/2016" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55a-Ev-bxT">
-                                <rect key="frame" x="16" y="101" width="113.5" height="17.5"/>
-                                <fontDescription key="fontDescription" name="ProximaNovaCond-Regular" family="Proxima Nova Condensed" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End date: 08/17/2018" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85f-BN-8Ua">
-                                <rect key="frame" x="195" y="101" width="109" height="17.5"/>
-                                <fontDescription key="fontDescription" name="ProximaNovaCond-Regular" family="Proxima Nova Condensed" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="69" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4ne-Sv-Gl5">
-                                <rect key="frame" x="0.0" y="214" width="320" height="354"/>
+                                <rect key="frame" x="0.0" y="194" width="320" height="374"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewProjectTaskCell" rowHeight="69" id="gMy-nC-Ez9" customClass="NewProjectTaskCell" customModule="Progress" customModuleProvider="target">
@@ -183,40 +404,40 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99/99/9999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cus-x6-WZc">
-                                                    <rect key="frame" x="18" y="43.5" width="65" height="17.5"/>
+                                                    <rect key="frame" x="18" y="46" width="60" height="15"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="65" id="xhL-12-Rny"/>
+                                                        <constraint firstAttribute="width" constant="60" id="xhL-12-Rny"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="ProximaNovaCond-Regular" family="Proxima Nova Condensed" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="ProximaNovaCond-Regular" family="Proxima Nova Condensed" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ox3-7m-2BD">
-                                                    <rect key="frame" x="96" y="56" width="138" height="2"/>
+                                                    <rect key="frame" x="91" y="56" width="148" height="2"/>
                                                 </progressView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 days left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zut-5e-R5o">
-                                                    <rect key="frame" x="96" y="37.5" width="138" height="17.5"/>
+                                                    <rect key="frame" x="91" y="37.5" width="148" height="17.5"/>
                                                     <fontDescription key="fontDescription" name="ProximaNovaCond-Regular" family="Proxima Nova Condensed" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99/99/9999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWx-tT-5BE">
-                                                    <rect key="frame" x="247" y="43.5" width="65" height="17.5"/>
+                                                    <rect key="frame" x="252" y="46" width="60" height="15"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="65" id="FNZ-Lx-gII"/>
+                                                        <constraint firstAttribute="width" constant="60" id="FNZ-Lx-gII"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="ProximaNovaCond-Regular" family="Proxima Nova Condensed" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="ProximaNovaCond-Regular" family="Proxima Nova Condensed" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status: Finished" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKH-2B-Hl2">
-                                                    <rect key="frame" x="230" y="8" width="82" height="18"/>
+                                                    <rect key="frame" x="230" y="8" width="82" height="17.5"/>
                                                     <fontDescription key="fontDescription" name="ProximaNovaCond-Regular" family="Proxima Nova Condensed" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10pts" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAO-V6-BqM">
-                                                    <rect key="frame" x="291" y="23" width="21" height="12.5"/>
+                                                    <rect key="frame" x="291" y="23" width="21" height="12"/>
                                                     <fontDescription key="fontDescription" name="ProximaNovaCond-Semibold" family="Proxima Nova Condensed" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -239,6 +460,7 @@
                                                 <constraint firstItem="vpC-Gl-ea5" firstAttribute="leading" secondItem="G4Q-m1-Sdp" secondAttribute="leadingMargin" constant="10" id="oHh-WJ-2SH"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="QWx-tT-5BE" secondAttribute="trailing" id="wRg-Dm-rAD"/>
                                                 <constraint firstAttribute="bottom" secondItem="Cus-x6-WZc" secondAttribute="bottom" constant="8" id="wbI-b5-mCF"/>
+                                                <constraint firstItem="uAO-V6-BqM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vpC-Gl-ea5" secondAttribute="trailing" constant="30" id="yef-EE-FLY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -258,17 +480,17 @@
                                 </connections>
                             </tableView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.84999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="TkF-rs-Kne">
-                                <rect key="frame" x="16" y="172.5" width="288" height="2.5"/>
+                                <rect key="frame" x="16" y="152.5" width="288" height="2.5"/>
                                 <color key="trackTintColor" white="0.90489366319999998" alpha="1" colorSpace="calibratedWhite"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Requires: 85% (170pts/200pts)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxJ-OQ-XyZ">
-                                <rect key="frame" x="85.5" y="162" width="149.5" height="12"/>
+                                <rect key="frame" x="85.5" y="142" width="149.5" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are behind in schedule!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ye3-EI-5q3">
-                                <rect key="frame" x="83.5" y="174" width="153.5" height="18.5"/>
+                                <rect key="frame" x="84" y="154" width="153.5" height="18.5"/>
                                 <fontDescription key="fontDescription" name="ProximaNovaCond-Regular" family="Proxima Nova Condensed" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -285,23 +507,19 @@
                             <constraint firstItem="Xat-aE-obT" firstAttribute="trailing" secondItem="sLr-yh-COI" secondAttribute="trailingMargin" id="EmE-sG-X5g"/>
                             <constraint firstItem="Xat-aE-obT" firstAttribute="top" secondItem="ram-Zc-klW" secondAttribute="bottom" constant="8" id="EvU-Hz-1mi"/>
                             <constraint firstItem="Xat-aE-obT" firstAttribute="leading" secondItem="sLr-yh-COI" secondAttribute="leadingMargin" id="GzJ-fk-7oy"/>
-                            <constraint firstItem="iC4-b4-QHo" firstAttribute="top" secondItem="Xat-aE-obT" secondAttribute="bottom" constant="57" id="Mgn-4t-AJX"/>
+                            <constraint firstItem="iC4-b4-QHo" firstAttribute="top" secondItem="Xat-aE-obT" secondAttribute="bottom" constant="37" id="Mgn-4t-AJX"/>
                             <constraint firstItem="iC4-b4-QHo" firstAttribute="top" secondItem="vcg-fN-s0J" secondAttribute="bottom" constant="-1" id="Ogo-1k-XNK"/>
                             <constraint firstItem="TkF-rs-Kne" firstAttribute="top" secondItem="cxJ-OQ-XyZ" secondAttribute="bottom" constant="-2" id="VtD-z5-Zvi"/>
                             <constraint firstItem="iC4-b4-QHo" firstAttribute="trailing" secondItem="sLr-yh-COI" secondAttribute="trailingMargin" id="XCL-gQ-7zA"/>
                             <constraint firstItem="TkF-rs-Kne" firstAttribute="trailing" secondItem="sLr-yh-COI" secondAttribute="trailingMargin" id="Yil-Gl-JQm"/>
                             <constraint firstAttribute="trailing" secondItem="4ne-Sv-Gl5" secondAttribute="trailing" id="cgQ-dz-i4D"/>
-                            <constraint firstItem="85f-BN-8Ua" firstAttribute="top" secondItem="Xat-aE-obT" secondAttribute="bottom" constant="7" id="fZZ-B2-yyr"/>
-                            <constraint firstItem="55a-Ev-bxT" firstAttribute="leading" secondItem="sLr-yh-COI" secondAttribute="leadingMargin" id="guT-OD-6mP"/>
-                            <constraint firstItem="55a-Ev-bxT" firstAttribute="top" secondItem="Xat-aE-obT" secondAttribute="bottom" constant="7" id="hpb-J9-zHJ"/>
                             <constraint firstItem="cxJ-OQ-XyZ" firstAttribute="centerX" secondItem="sLr-yh-COI" secondAttribute="centerX" id="qki-ic-oHz"/>
-                            <constraint firstItem="85f-BN-8Ua" firstAttribute="trailing" secondItem="sLr-yh-COI" secondAttribute="trailingMargin" id="rNL-az-oJA"/>
                             <constraint firstItem="4ne-Sv-Gl5" firstAttribute="leading" secondItem="sLr-yh-COI" secondAttribute="leading" id="rTU-ii-0lc"/>
                             <constraint firstItem="Ye3-EI-5q3" firstAttribute="centerX" secondItem="sLr-yh-COI" secondAttribute="centerX" id="sf6-KS-dki"/>
                             <constraint firstItem="TkF-rs-Kne" firstAttribute="top" secondItem="iC4-b4-QHo" secondAttribute="bottom" constant="20" id="xCE-RC-Mvx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Project Detail" id="Ocu-yW-eDB">
+                    <navigationItem key="navigationItem" title="Project Detail" largeTitleDisplayMode="never" id="Ocu-yW-eDB">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="V03-68-ObA">
                             <connections>
                                 <segue destination="s6M-0i-m4D" kind="show" identifier="ProjectDetailToNewTask" id="xTd-9s-qB6"/>
@@ -310,13 +528,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="alertLabel" destination="Ye3-EI-5q3" id="CAG-O1-PNZ"/>
-                        <outlet property="endDateLabel" destination="85f-BN-8Ua" id="zwh-MC-32D"/>
                         <outlet property="percentLabel" destination="vcg-fN-s0J" id="WC6-iH-57d"/>
                         <outlet property="progressBar" destination="iC4-b4-QHo" id="idx-1Q-qcO"/>
                         <outlet property="projectLabel" destination="Xat-aE-obT" id="Eyg-3M-6n9"/>
                         <outlet property="shouldCompletePercentLabel" destination="cxJ-OQ-XyZ" id="AC9-FY-rq6"/>
                         <outlet property="shouldCompleteProgressBar" destination="TkF-rs-Kne" id="1f6-Ek-zc0"/>
-                        <outlet property="startDateLabel" destination="55a-Ev-bxT" id="FlU-a8-zPV"/>
                         <outlet property="tableView" destination="4ne-Sv-Gl5" id="kJi-4B-MEB"/>
                     </connections>
                 </viewController>
@@ -345,7 +561,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDV-vd-OHL">
                                 <rect key="frame" x="15" y="77" width="83.5" height="23.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="83.5" id="6hL-L5-wfY"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="83.5" id="6hL-L5-wfY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ProximaNovaCond-Regular" family="Proxima Nova Condensed" pointSize="19"/>
                                 <nil key="textColor"/>
@@ -360,7 +576,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3o-b0-keg">
                                 <rect key="frame" x="17" y="119" width="37.5" height="23.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="37.5" id="Q1h-Pr-3wY"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="37.5" id="Q1h-Pr-3wY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ProximaNovaCond-Regular" family="Proxima Nova Condensed" pointSize="19"/>
                                 <nil key="textColor"/>
@@ -369,7 +585,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lasts:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOp-BG-rOd">
                                 <rect key="frame" x="188" y="119" width="40.5" height="23.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40.5" id="yso-72-TPd"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40.5" id="yso-72-TPd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ProximaNovaCond-Regular" family="Proxima Nova Condensed" pointSize="19"/>
                                 <nil key="textColor"/>
@@ -378,7 +594,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Importance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuA-8f-9Na">
                                 <rect key="frame" x="14" y="165.5" width="100" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="lKM-eN-gMm"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="lKM-eN-gMm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -391,9 +607,9 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pts" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l0i-rq-WMj">
-                                <rect key="frame" x="114" y="161" width="40" height="30"/>
+                                <rect key="frame" x="114" y="161" width="42.5" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="fmR-83-Vou"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="fmR-83-Vou"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -407,6 +623,7 @@
                             <constraint firstItem="1BA-hq-ef1" firstAttribute="top" secondItem="lRQ-GD-vM2" secondAttribute="bottom" constant="12" id="Avh-5D-yHA"/>
                             <constraint firstItem="IDV-vd-OHL" firstAttribute="leading" secondItem="4iv-Wn-4ba" secondAttribute="leading" constant="15" id="BSV-sS-hWO"/>
                             <constraint firstItem="l0i-rq-WMj" firstAttribute="leading" secondItem="KuA-8f-9Na" secondAttribute="trailing" id="CdZ-4X-Pmk"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="l0i-rq-WMj" secondAttribute="trailing" constant="20" symbolic="YES" id="Mgm-9H-P2o"/>
                             <constraint firstItem="KuA-8f-9Na" firstAttribute="top" secondItem="1BA-hq-ef1" secondAttribute="bottom" constant="18.5" id="TjO-lx-Civ"/>
                             <constraint firstItem="z3o-b0-keg" firstAttribute="leading" secondItem="4iv-Wn-4ba" secondAttribute="leadingMargin" constant="1" id="VCi-uY-vhU"/>
                             <constraint firstItem="qCJ-Ze-exb" firstAttribute="top" secondItem="lRQ-GD-vM2" secondAttribute="bottom" constant="12" id="ceu-la-LaB"/>
@@ -419,9 +636,10 @@
                             <constraint firstItem="qCJ-Ze-exb" firstAttribute="leading" secondItem="ZOp-BG-rOd" secondAttribute="trailing" constant="7.5" id="oaa-UB-jUb"/>
                             <constraint firstItem="ZOp-BG-rOd" firstAttribute="leading" secondItem="1BA-hq-ef1" secondAttribute="trailing" constant="8" id="qPo-Pd-MQJ"/>
                             <constraint firstItem="l0i-rq-WMj" firstAttribute="top" secondItem="qCJ-Ze-exb" secondAttribute="bottom" constant="14" id="ts3-1Z-HPl"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qCJ-Ze-exb" secondAttribute="trailing" constant="20" symbolic="YES" id="vA3-gM-rzY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="New Task" id="aJ6-Nj-MrL">
+                    <navigationItem key="navigationItem" title="New Task" largeTitleDisplayMode="never" id="aJ6-Nj-MrL">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="5QD-iC-BAD">
                             <connections>
                                 <action selector="saveButtonTouched:" destination="s6M-0i-m4D" id="N0r-xx-Fca"/>
@@ -437,7 +655,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JOZ-W6-wPz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1914.375" y="893.66197183098598"/>
+            <point key="canvasLocation" x="2036" y="894"/>
         </scene>
         <!--New Project-->
         <scene sceneID="h4e-3f-Pas">
@@ -475,40 +693,40 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99/99/9999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPA-iC-cfO">
-                                                    <rect key="frame" x="18" y="43.5" width="65" height="17.5"/>
+                                                    <rect key="frame" x="18" y="46" width="60" height="15"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="65" id="veL-fn-m6Q"/>
+                                                        <constraint firstAttribute="width" constant="60" id="veL-fn-m6Q"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="ProximaNovaCond-Regular" family="Proxima Nova Condensed" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="ProximaNovaCond-Regular" family="Proxima Nova Condensed" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lJj-04-CWc">
-                                                    <rect key="frame" x="96" y="56" width="138" height="2"/>
+                                                    <rect key="frame" x="91" y="56" width="148" height="2"/>
                                                 </progressView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 days left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ag-hZ-UcD">
-                                                    <rect key="frame" x="96" y="37.5" width="138" height="17.5"/>
+                                                    <rect key="frame" x="91" y="37.5" width="148" height="17.5"/>
                                                     <fontDescription key="fontDescription" name="ProximaNovaCond-Regular" family="Proxima Nova Condensed" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99/99/9999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lg-2t-lmK">
-                                                    <rect key="frame" x="247" y="43.5" width="65" height="17.5"/>
+                                                    <rect key="frame" x="252" y="46" width="60" height="15"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="65" id="oiv-6l-okZ"/>
+                                                        <constraint firstAttribute="width" constant="60" id="oiv-6l-okZ"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="ProximaNovaCond-Regular" family="Proxima Nova Condensed" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="ProximaNovaCond-Regular" family="Proxima Nova Condensed" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status: Finished" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVS-Fz-btI">
-                                                    <rect key="frame" x="230" y="8" width="82" height="18"/>
+                                                    <rect key="frame" x="230" y="8" width="82" height="17.5"/>
                                                     <fontDescription key="fontDescription" name="ProximaNovaCond-Regular" family="Proxima Nova Condensed" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100pts" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Kq-EJ-Cvx">
-                                                    <rect key="frame" x="286" y="23" width="26" height="12.5"/>
+                                                    <rect key="frame" x="286" y="23" width="26" height="12"/>
                                                     <fontDescription key="fontDescription" name="ProximaNovaCond-Semibold" family="Proxima Nova Condensed" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -525,6 +743,7 @@
                                                 <constraint firstItem="5Ag-hZ-UcD" firstAttribute="leading" secondItem="aPA-iC-cfO" secondAttribute="trailing" constant="13" id="WGx-Aq-zFf"/>
                                                 <constraint firstItem="lJj-04-CWc" firstAttribute="top" secondItem="5Ag-hZ-UcD" secondAttribute="bottom" constant="1" id="YEA-et-x0i"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="lJj-04-CWc" secondAttribute="bottom" constant="2.6699999999999999" id="diK-XQ-Gez"/>
+                                                <constraint firstItem="2Kq-EJ-Cvx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zrD-iV-NRK" secondAttribute="trailing" constant="30" id="erB-MA-hoJ"/>
                                                 <constraint firstAttribute="bottom" secondItem="aPA-iC-cfO" secondAttribute="bottom" constant="8" id="fXx-1P-u5k"/>
                                                 <constraint firstItem="2Kq-EJ-Cvx" firstAttribute="top" secondItem="Qzh-o4-RYm" secondAttribute="topMargin" constant="15" id="fif-bs-3CE"/>
                                                 <constraint firstItem="2Kq-EJ-Cvx" firstAttribute="trailing" secondItem="Qzh-o4-RYm" secondAttribute="trailingMargin" id="gjf-MP-kao"/>
@@ -561,7 +780,8 @@
                             <constraint firstAttribute="trailing" secondItem="RpH-Fa-nj3" secondAttribute="trailing" id="xO0-Dt-GQA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="New Project" id="0jF-Ed-ZMi">
+                    <navigationItem key="navigationItem" title="New Project" largeTitleDisplayMode="never" id="0jF-Ed-ZMi">
+                        <barButtonItem key="backBarButtonItem" title=" " id="5Ma-co-ThT"/>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="save" id="n24-8O-2fT">
                                 <connections>
@@ -585,6 +805,12 @@
             <point key="canvasLocation" x="1123.125" y="130.98591549295776"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="page1_added" width="750" height="446"/>
+        <image name="page2_added" width="750" height="440"/>
+        <image name="page3_added" width="545" height="205"/>
+        <image name="page4_added" width="545" height="620"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="G2h-os-cGh"/>
     </inferredMetricsTieBreakers>

@@ -26,6 +26,12 @@ class NewTaskViewController : UIViewController, UIPickerViewDelegate, UIPickerVi
         let pickerView = UIPickerView()
         let datePickerView = UIDatePicker()
         
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd, yyyy"
+        let today = dateFormatter.date(from: dateFormatter.string(from: Date(timeIntervalSinceNow: 0)))
+
+        
         pickerView.delegate = self
         
         impPtsField.inputView = pickerView
